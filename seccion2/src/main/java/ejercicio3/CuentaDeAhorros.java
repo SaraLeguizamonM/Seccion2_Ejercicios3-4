@@ -1,3 +1,4 @@
+package ejercicio3;
 public class CuentaDeAhorros extends Cuenta {
 
     public CuentaDeAhorros(double saldo, String cuenta) {
