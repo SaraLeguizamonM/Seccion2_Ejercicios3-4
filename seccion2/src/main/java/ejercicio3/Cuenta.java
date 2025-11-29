@@ -1,13 +1,14 @@
 package ejercicio3;
 
 public abstract class  Cuenta  {
-    private int saldo;
+    protected double saldo;
     public String cuenta;
 
-    abstract void depositar();
-    abstract void retirar();
 
-    public int getSaldo() {
+    abstract void depositar(double monto);
+    abstract void retirar(double monto);
+
+    public double getSaldo() {
         return saldo;
     }
 }
