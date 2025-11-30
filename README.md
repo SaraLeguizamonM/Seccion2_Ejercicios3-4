@@ -18,7 +18,7 @@ MÉTODO ABSTRACTO retirar(monto: real)
 
 MÉTODO getSaldo()
 RETORNAR saldo
-FIN CLASE`
+FIN CLASE
 
 //-------------------------------------------
 
@@ -59,7 +59,7 @@ FIN CLASE
 // CLASE CuentaCorriente
 CLASE CuentaCorriente HEREDA DE Cuenta
 ATRIBUTO PRIVADO "final":
-liimiteDeSobreGiro = -5000
+liimiteDeSobreGiro = -50000
 
 CONSTRUCTOR(saldo, cuenta)
 this.saldo = saldo
@@ -76,7 +76,7 @@ SI monto > 0 Y (saldo - monto) >= liimiteDeSobreGiro ENTONCES
 saldo = saldo - monto
 RETORNAR verdadero
 SINO
-MOSTRAR "Límite de sobregiro alcanzado (-5000)"
+MOSTRAR "Límite de sobregiro alcanzado (-50000)"
 RETORNAR falso
 FIN SI
 FIN MÉTODO
@@ -88,7 +88,7 @@ FIN CLASE
 
 PROGRAMA Principal
 LEER titular
-LEER montoInicial
+LEER monto
 
 MIENTRAS no se elija tipo de cuenta HACER
 MOSTRAR "1. Cuenta de ahorros"
@@ -97,7 +97,7 @@ LEER opcion
 
 SEGÚN opcion HACER
 CASO "1":
-  cuenta = NUEVA CuentaDeAhorros(montoInicial, titular)
+  cuenta = NUEVA CuentaDeAhorros(monto, titular)
   dias = 0
   continuar = falso
 
@@ -134,7 +134,7 @@ CASO "1":
     elegir = verdadero
 
 CASO "2":
-  cuenta = NUEVA CuentaCorriente(montoInicial, titular)
+  cuenta = NUEVA CuentaCorriente(monto, titular)
   dias = 0
   continuar = falso
 
