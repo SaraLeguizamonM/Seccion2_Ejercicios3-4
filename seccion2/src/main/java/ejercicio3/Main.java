@@ -75,7 +75,7 @@ public class Main {
                     while (!depositar) {
                         dias++;
                         System.out.println("Día " + dias + " - Saldo actual: $" + cuentaC.getSaldo()); // Mostrar saldo actual
-                        System.out.println("1. Depositar (se aplica interés diario automáticamente)");
+                        System.out.println("1. Depositar");
                         System.out.println("2. Retirar");
                         System.out.println("0. Salir");
                         System.out.print("Opción: ");
@@ -109,7 +109,6 @@ public class Main {
                     break;
                 default:
                     System.out.println("Opcion no reconocida, porfavor intentelo de nuevo");
-
             }
         }sc.close();
     }
