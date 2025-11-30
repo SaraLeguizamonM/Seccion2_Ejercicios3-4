@@ -5,10 +5,10 @@ public abstract class  Cuenta  {
     public String cuenta;
 
 
-    abstract void depositar(double monto);
-    abstract void retirar(double monto);
+    abstract void depositar(double monto); // Metodo abstracto para depositar dinero
+    abstract Boolean retirar(double monto); // Metodo abstracto para retirar dinero
 
-    public double getSaldo() {
+    public double getSaldo() { // Metodo para obtener el saldo actual 
         return saldo;
     }
 }
