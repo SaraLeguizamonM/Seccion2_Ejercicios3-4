@@ -66,8 +66,8 @@ public class Main {
                     break;
                 case "2":
                     CuentaCorriente cuentaC = new CuentaCorriente(monto, titular); // Crear cuenta corriente
-                    System.out.println("\n¡Cuenta Corriente creada para " + titular + "!");
-                    System.out.println("Cuenta corriente creada");
+                    System.out.println("¡Cuenta Corriente creada para " + titular + "!");
+                    System.out.println("Cuenta corriente creada...");
 
                     depositar = false;
                     dias = 0;
