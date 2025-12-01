@@ -18,14 +18,14 @@ public class Main {
             opcion = sc.nextLine();
             switch (opcion) {
                 case "1":
-                    ProcesadorPedidoFisico procesadorFisico = new ProcesadorPedidoFisico();
-                    procesadorFisico.validarPedido();
-                    procesadorFisico.procesar();
+                    ProcesadorPedidoFisico procesadorFisico = new ProcesadorPedidoFisico(); // Crear instancia de ProcesadorPedidoFisico
+                    procesadorFisico.validarPedido(); // Llamar al metodo validarPedido
+                    procesadorFisico.procesar(); // Llamar al metodo procesar
                     break;
                 case "2":
-                    ProcesadorPedidoDigital  procesadorDigital = new ProcesadorPedidoDigital();
-                    procesadorDigital.validarPedido();
-                    procesadorDigital.procesar();
+                    ProcesadorPedidoDigital  procesadorDigital = new ProcesadorPedidoDigital(); // Crear instancia de ProcesadorPedidoDigital
+                    procesadorDigital.validarPedido(); // Llamar al metodo validarPedido
+                    procesadorDigital.procesar(); // Llamar al metodo procesar
                     break;
                 default:
                     System.out.println("Opcion invalida");

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ProcesadorPedidoFisico extends ProcesadorDePedido{
     @Override
     public void procesar() {
-        ArrayList<String> items = new ArrayList<>();
+        ArrayList<String> items = new ArrayList<>(); // Lista para almacenar los items fisicos
 
         Scanner sc = new Scanner(System.in);
 
@@ -19,7 +19,7 @@ public class ProcesadorPedidoFisico extends ProcesadorDePedido{
             System.out.println("2025. Nintendo Wii                 -");
             System.out.println("------------------------------------");
             System.out.println("--- Ingrese el codigo del pedido ---");
-            String codigo;
+            String codigo; // Almacena el codigo ingresado por el usuario
             do{
                 codigo = sc.nextLine();
                 switch (codigo) {
@@ -67,7 +67,7 @@ public class ProcesadorPedidoFisico extends ProcesadorDePedido{
 
         int envio = 0;
         do{
-            opcionCiudad = sc.nextLine();
+            opcionCiudad = sc.nextLine(); // Almacena la opcion de ciudad ingresada por el usuario
             switch(opcionCiudad){
                 case "1":
                     System.out.println("Precio del envio");

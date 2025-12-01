@@ -8,8 +8,8 @@ public class ProcesadorPedidoDigital extends ProcesadorDePedido {
     @Override
     public void procesar() {
         Scanner sc = new Scanner(System.in);
-        Random rand = new Random();
-        ArrayList<String> itemsDigitales = new ArrayList<>();
+        Random rand = new Random(); // Generador de numeros aleatorios para las claves de licencia
+        ArrayList<String> itemsDigitales = new ArrayList<>(); // Lista para almacenar los items digitales
 
         String opcion;
 
@@ -21,7 +21,7 @@ public class ProcesadorPedidoDigital extends ProcesadorDePedido {
             System.out.println("20. Piratas-Biblioteca +50 CajaBOX -");
             System.out.println("------------------------------------");
             System.out.println("--- Ingrese el codigo del pedido ---");
-            String codigo;
+            String codigo; // Almacena el codigo ingresado por el usuario
 
             do{
                 codigo = sc.nextLine();
@@ -66,7 +66,7 @@ public class ProcesadorPedidoDigital extends ProcesadorDePedido {
         System.out.println("Para: " + correo);
         System.out.println("Asunto: Has comprado los siguientes items! ");
         System.out.println("-------------------------------------------------");
-        for (String item : itemsDigitales) {
+        for (String item : itemsDigitales) { // Enviar clave de licencia para cada item comprado
             System.out.println(item + " Tu clave de la licencia es: " + rand.nextInt(100000,999999));
         }
         System.out.println("Gracias por tu compra!");
