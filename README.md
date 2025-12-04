@@ -18,8 +18,8 @@ CONSTRUCTOR(saldo, cuenta)
 this.saldo = saldo
 this.titular = cuenta
 
-MÉTODO ABSTRACTO depositar(monto: real)
-MÉTODO ABSTRACTO retirar(monto: real)
+MÉTODO ABSTRACTO depositar(monto)
+MÉTODO ABSTRACTO retirar(monto)
 
 MÉTODO CONCRETO getSaldo()
 RETORNAR saldo
