@@ -2,9 +2,12 @@
 Deben realizar el pseudocodigo, el codigo montado en git, el diagrama de clases y el diagrama de flujo.
 1. **Jerarquia de Cuentas Bancarias.**
 ## Pseudocodigo
+<details>
+  <summary><strong>Ejercicio 3</strong></summary>
+  
 ```
 // Clase abstracta Cuenta
-CLASE ABSTRACTA Cuenta
+
 ATRIBUTOS PROTEGIDOS:
 saldo: real
 titular: texto
@@ -22,8 +25,8 @@ FIN CLASE
 
 //-------------------------------------------
 
-// CLASE CuentaDeAhorros
-CLASE CuentaDeAhorros HEREDA DE Cuenta
+// Clase CuentaDeAhorros hereda de Cuenta
+
 ATRIBUTOS PRIVADOS "FINAL":
 interesDiario = 0.10 / 365
 
@@ -56,8 +59,9 @@ FIN METODO
 FIN CLASE
 
 //-------------------------------------------
-// CLASE CuentaCorriente
-CLASE CuentaCorriente HEREDA DE Cuenta
+
+// Clase CuentaCorriente hereda de Cuenta
+
 ATRIBUTO PRIVADO "final":
 liimiteDeSobreGiro = -50000
 
@@ -179,5 +183,131 @@ CERRAR
 FIN PROGRAMA
 ```
 
-2. **Sistema de Procesamiento de Pedidos.**
+</details>
+<details>
+  <summary><strong>Ejercicio 4</strong></summary>
+  
+```
+// Clase abstracta ProcesadorDePedido
 
+MÉTODO ABSTRACTO procesar()
+
+MÉTODO CONCRETO validarPedido()
+FIN CLASE
+
+//-------------------------------------------
+
+// Clase ProcesadorDePedidoFisico hereda de ProcesadorDePedido
+CLASE CuentaDeAhorros HEREDA DE Cuenta
+MÉTODO procesar() SOBREESCRITO
+items = lista vacía de texto
+continuarAgregando = verdadero
+
+MIENTRAS continuarAgregando HACER
+MOSTRAR catálogo físico:
+1125. PlayStation
+3025. Xbox
+3011. Nintendo Switch
+2025. Nintendo Wii
+LEER codigo
+
+SEGÚN codigo HACER
+CASO "1125": items.agregar("PlayStation")
+CASO "3025": items.agregar("Xbox")
+CASO "3011": items.agregar("Nintendo Switch")
+CASO "2025": items.agregar("Reserva - Wii") 
+OTRO: MOSTRAR "Código inválido"
+FIN SEGÚN
+
+LEER "¿Quieres agregar otro item? (si/no)"
+SI respuesta = "no" ENTONCES
+continuarAgregando = falso
+FIN MIENTRAS
+
+MOSTRAR ciudades disponibles
+LEER opcionCiudad
+SEGÚN opcionCiudad
+CASO "1": ciudad = "Medellín", costoEnvio = 12000
+CASO "2": ciudad = "Bogotá", costoEnvio = 15000
+FIN SEGÚN
+
+LEER dirección completa
+
+MOSTRAR resumen del pedido:
+Items: items
+Ciudad: ciudad
+Dirección: dirección
+Costo de envío: costoEnvio
+FIN MÉTODO
+FIN CLASE
+
+//-------------------------------------------
+
+// Clase ProcesadorDePedidoDigital hereda de ProcesadorDePedidoCLASE CuentaCorriente
+MÉTODO procesar() SOBREESCRITO
+itemsDigitales = lista vacía de texto
+continuarAgregando = verdadero
+
+MIENTRAS continuarAgregando HACER
+MOSTRAR catálogo digital:
+11. Steam-Biblioteca +1000
+25. EpicGames-Biblioteca +2000
+30. Tlanucher +50 Mods
+20. Piratas-Biblioteca +50 CajaBOX
+
+LEER codigo
+SEGÚN codigo HACER
+CASO "11": itemsDigitales.agregar("Steam-Biblioteca")
+CASO "25": itemsDigitales.agregar("EpicGames-Biblioteca")
+CASO "30": itemsDigitales.agregar("Tlanucher")
+CASO "20": itemsDigitales.agregar("Virus...")
+OTRO: MOSTRAR "Código inválido"
+FIN SEGÚN
+
+LEER "¿Quieres agregar otro item? (si/no)"
+SI respuesta = "no" ENTONCES
+continuarAgregando = falso
+FIN MIENTRAS
+
+LEER correo electrónico
+
+MOSTRAR correo simulado:
+Para: correo
+Asunto: Has comprado los siguientes items!
+PARA cada item en itemsDigitales HACER
+MOSTRAR item + " - Clave: " + númeroAleatorio(100000,999999)
+FIN PARA
+MOSTRAR "¡Gracias por tu compra!"
+FIN MÉTODO
+FIN CLASE
+
+//-------------------------------------------
+
+// MAIN
+MOSTRAR bienvenida al sistema de pedidos
+MOSTRAR opciones:
+1. Pedido físico
+2. Pedido digital
+
+opcionValida = falso
+MIENTRAS no opcionValida HACER
+LEER opcion
+SEGÚN opcion HACER
+CASO "1":
+procesador = NUEVO ProcesadorPedidoFisico
+procesador.validarPedido()
+procesador.procesar()    
+opcionValida = verdadero
+CASO "2":
+procesador = NUEVO ProcesadorPedidoDigital
+procesador.validarPedido()
+procesador.procesar()
+opcionValida = verdadero
+OTRO:
+MOSTRAR "Opción inválida, intente de nuevo"
+FIN SEGÚN
+FIN MIENTRAS
+
+FIN PROGRAMA
+```
+</details>
