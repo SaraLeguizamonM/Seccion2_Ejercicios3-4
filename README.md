@@ -1,6 +1,7 @@
 # Seccion 2
 Deben realizar el pseudocodigo, el codigo montado en git, el diagrama de clases y el diagrama de flujo.
 1. **Jerarquia de Cuentas Bancarias.**
+2. **Sistema de Procesamiento de Pedidos**
 ## Pseudocodigo
 <details>
   <summary><strong>Ejercicio 3</strong></summary>
@@ -190,16 +191,16 @@ FIN PROGRAMA
 ```
 // Clase abstracta ProcesadorDePedido
 
-MÉTODO ABSTRACTO procesar()
+METODO ABSTRACTO procesar()
 
-MÉTODO CONCRETO validarPedido()
+METODO CONCRETO validarPedido()
 FIN CLASE
 
 //-------------------------------------------
 
 // Clase ProcesadorDePedidoFisico hereda de ProcesadorDePedido
 CLASE CuentaDeAhorros HEREDA DE Cuenta
-MÉTODO procesar() SOBREESCRITO
+METODO procesar() SOBREESCRITO
 items = lista vacía de texto
 continuarAgregando = verdadero
 
@@ -226,7 +227,7 @@ FIN MIENTRAS
 
 MOSTRAR ciudades disponibles
 LEER opcionCiudad
-SEGÚN opcionCiudad
+SEGUN opcionCiudad
 CASO "1": ciudad = "Medellín", costoEnvio = 12000
 CASO "2": ciudad = "Bogotá", costoEnvio = 15000
 FIN SEGÚN
@@ -236,7 +237,7 @@ LEER dirección completa
 MOSTRAR resumen del pedido:
 Items: items
 Ciudad: ciudad
-Dirección: dirección
+Direccion: dirección
 Costo de envío: costoEnvio
 FIN MÉTODO
 FIN CLASE
@@ -244,12 +245,12 @@ FIN CLASE
 //-------------------------------------------
 
 // Clase ProcesadorDePedidoDigital hereda de ProcesadorDePedidoCLASE CuentaCorriente
-MÉTODO procesar() SOBREESCRITO
+METODO procesar() SOBREESCRITO
 itemsDigitales = lista vacía de texto
 continuarAgregando = verdadero
 
 MIENTRAS continuarAgregando HACER
-MOSTRAR catálogo digital:
+MOSTRAR catalogo digital:
 11. Steam-Biblioteca +1000
 25. EpicGames-Biblioteca +2000
 30. Tlanucher +50 Mods
@@ -275,10 +276,10 @@ MOSTRAR correo simulado:
 Para: correo
 Asunto: Has comprado los siguientes items!
 PARA cada item en itemsDigitales HACER
-MOSTRAR item + " - Clave: " + númeroAleatorio(100000,999999)
+MOSTRAR item + " - Clave: " + numeroAleatorio(100000,999999)
 FIN PARA
 MOSTRAR "¡Gracias por tu compra!"
-FIN MÉTODO
+FIN METODO
 FIN CLASE
 
 //-------------------------------------------
@@ -292,7 +293,7 @@ MOSTRAR opciones:
 opcionValida = falso
 MIENTRAS no opcionValida HACER
 LEER opcion
-SEGÚN opcion HACER
+SEGUN opcion HACER
 CASO "1":
 procesador = NUEVO ProcesadorPedidoFisico
 procesador.validarPedido()
@@ -304,8 +305,8 @@ procesador.validarPedido()
 procesador.procesar()
 opcionValida = verdadero
 OTRO:
-MOSTRAR "Opción inválida, intente de nuevo"
-FIN SEGÚN
+MOSTRAR "Opción invalida, intente de nuevo"
+FIN SEGUN
 FIN MIENTRAS
 
 FIN PROGRAMA
