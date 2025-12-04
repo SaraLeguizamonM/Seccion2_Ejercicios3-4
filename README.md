@@ -1,6 +1,6 @@
 # Seccion 2
-Deben realizar el pseudocódigo, el código montado en git, el diagrama de clases y el diagrama de flujo.
-1. **Jerarquía de Cuentas Bancarias.**
+Deben realizar el pseudocodigo, el codigo montado en git, el diagrama de clases y el diagrama de flujo.
+1. **Jerarquia de Cuentas Bancarias.**
 ## Pseudocodigo
 ```
 // Clase abstracta Cuenta
@@ -13,10 +13,10 @@ CONSTRUCTOR(saldo, cuenta)
 this.saldo = saldo
 this.titular = cuenta
 
-MÉTODO ABSTRACTO depositar(monto: real)
-MÉTODO ABSTRACTO retirar(monto: real)
+METODO ABSTRACTO depositar(monto: real)
+METODO ABSTRACTO retirar(monto: real)
 
-MÉTODO getSaldo()
+METODO getSaldo()
 RETORNAR saldo
 FIN CLASE
 
@@ -31,20 +31,20 @@ CONSTRUCTOR(saldo, cuenta)
 this.saldo = saldo
 this.titular = cuenta
 
-MÉTODO depositar(monto)
+METODO depositar(monto)
 SI monto > 0 ENTONCES
 saldo = saldo + monto
-interés = saldo × interesDiario
-saldo = saldo + interés
+interes = saldo × interesDiario
+saldo = saldo + interes
 FIN SI
-FIN MÉTODO
+FIN METODO
 
-MÉTODO aplicarInteresDiario()
-interés = saldo × interesDiario
-saldo = saldo + interés
-FIN MÉTODO
+METODO aplicarInteresDiario()
+interes = saldo × interesDiario
+saldo = saldo + interEs
+FIN METODO
 
-MÉTODO retirar(monto)
+METODO retirar(monto)
 SI monto > 0 Y monto <= saldo ENTONCES
 saldo = saldo - monto
 RETORNAR verdadero
@@ -52,7 +52,7 @@ SINO
 MOSTRAR "Saldo insuficiente en cuenta de ahorros"
 RETORNAR falso
 FIN SI
-FIN MÉTODO
+FIN METODO
 FIN CLASE
 
 //-------------------------------------------
@@ -65,21 +65,21 @@ CONSTRUCTOR(saldo, cuenta)
 this.saldo = saldo
 this.titular = cuenta
 
-MÉTODO depositar(monto)
+METODO depositar(monto)
 SI monto > 0 ENTONCES
 saldo = saldo + monto
 FIN SI
-FIN MÉTODO
+FIN METODO
 
-MÉTODO retirar(monto)
+METODO retirar(monto)
 SI monto > 0 Y (saldo - monto) >= liimiteDeSobreGiro ENTONCES
 saldo = saldo - monto
 RETORNAR verdadero
 SINO
-MOSTRAR "Límite de sobregiro alcanzado (-50000)"
+MOSTRAR "Limite de sobregiro alcanzado (-50000)"
 RETORNAR falso
 FIN SI
-FIN MÉTODO
+FIN METODO
 FIN CLASE
 
 //-------------------------------------------
@@ -95,7 +95,7 @@ MOSTRAR "1. Cuenta de ahorros"
 MOSTRAR "2. Cuenta corriente"
 LEER opcion
 
-SEGÚN opcion HACER
+SEGuN opcion HACER
 CASO "1":
   cuenta = NUEVA CuentaDeAhorros(monto, titular)
   dias = 0
@@ -103,33 +103,33 @@ CASO "1":
 
   MIENTRAS no continuar HACER
   dias = dias + 1
-  MOSTRAR "Día " + dias + " - Saldo: " + saldo 
+  MOSTRAR "Dia " + dias + " - Saldo: " + saldo 
 
-  MOSTRAR menú:
-  1. Depositar (aplica interés diario)
+  MOSTRAR menu:
+  1. Depositar (aplica interes diario)
   2. Retirar
   0. Salir
 
   LEER opcionMenu
 
-  SEGÚN opcionMenu HACER
+  SEGUN opcionMenu HACER
   CASO 1:
     LEER montoDeposito
     cuenta.depositar(montoDeposito)
-    MOSTRAR "Depósito exitoso"
+    MOSTRAR "Deposito exitoso"
 
   CASO 2:
     LEER montoRetiro
     SI cuenta.retirar(montoRetiro) ENTONCES
     MOSTRAR "Retiro exitoso"
     SINO
-    MOSTRAR "Operación rechazada"
+    MOSTRAR "Operacion rechazada"
     FIN SI
 
   CASO 0:
     continuar = verdadero
     MOSTRAR "Saldo final: " + saldo
-    FIN SEGÚN
+    FIN SEGUN
     FIN MIENTRAS
     elegir = verdadero
 
@@ -140,39 +140,39 @@ CASO "2":
 
   MIENTRAS no continuar HACER
   dias = dias + 1
-  MOSTRAR "Día " + dias + " - Saldo: " + saldo 
+  MOSTRAR "Dia " + dias + " - Saldo: " + saldo 
 
-  MOSTRAR menú:
-  1. Depositar (aplica interés diario)
+  MOSTRAR menu:
+  1. Depositar (aplica interes diario)
   2. Retirar
   0. Salir
 
   LEER opcionMenu
 
-  SEGÚN opcionMenu HACER
+  SEGUN opcionMenu HACER
   CASO 1:
     LEER montoDeposito
     cuenta.depositar(montoDeposito)
-    MOSTRAR "Depósito exitoso"
+    MOSTRAR "Deposito exitoso"
 
   CASO 2:
     LEER montoRetiro
     SI cuenta.retirar(montoRetiro) ENTONCES
     MOSTRAR "Retiro exitoso"
     SINO
-    MOSTRAR "Límite de sobregiro alcanzado."
+    MOSTRAR "Limite de sobregiro alcanzado."
     FIN SI
 
   CASO 0:
     continuar = verdadero
     MOSTRAR "Saldo final: " + saldo
-    FIN SEGÚN
+    FIN SEGUN
     FIN MIENTRAS
     elegir = verdadero
 
 OTRO CASO:
-  MOSTRAR "Opción inválida"
-  FIN SEGÚN
+  MOSTRAR "Opcion invalida"
+  FIN SEGUN
   FIN MIENTRAS
 
 CERRAR
