@@ -32,7 +32,7 @@ pom.xml.versionsBackup
 *.tar.gz
 *.rar
 
-# IntelliJ IDEA (por si usas ambos)
+# IntelliJ IDEA 
 .idea/
 *.iml
 *.iws
